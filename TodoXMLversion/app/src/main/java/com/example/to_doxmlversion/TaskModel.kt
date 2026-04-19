@@ -1,4 +1,7 @@
 package com.example.to_doxmlversion
 
-class TaskModel {
-}
+
+data class Task(
+    val title:String,
+    val isDone: Boolean = false,
+)
