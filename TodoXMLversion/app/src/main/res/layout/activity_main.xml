@@ -5,20 +5,29 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:orientation="vertical"
+
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <EditText
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textfield"
+        android:background="@drawable/textfield_bg"
         android:hint="@string/add_your_task"
 
         />
     <Button
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button"
+        android:background="@drawable/bg_button"
         android:text="@string/add_your_task"/>
     <LinearLayout
         android:layout_width="match_parent"
