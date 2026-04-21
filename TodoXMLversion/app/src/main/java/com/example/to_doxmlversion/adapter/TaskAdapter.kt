@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.to_doxmlversion.R
-import com.example.to_doxmlversion.TaskDatabase
-import com.example.to_doxmlversion.TaskEntity
+import com.example.to_doxmlversion.data.local.TaskDatabase
+import com.example.to_doxmlversion.data.local.TaskEntity
 import com.example.to_doxmlversion.databinding.TaskItemBinding
 
 class TaskAdapter(

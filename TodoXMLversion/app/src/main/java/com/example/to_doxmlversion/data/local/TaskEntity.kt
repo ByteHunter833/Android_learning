@@ -1,4 +1,5 @@
-package com.example.to_doxmlversion
+package com.example.to_doxmlversion.data.local
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

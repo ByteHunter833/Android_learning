@@ -1,9 +1,10 @@
-package com.example.to_doxmlversion
+package com.example.to_doxmlversion.data.local
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-
+import com.example.to_doxmlversion.data.local.TaskEntity
 
 @Database(entities = [TaskEntity::class], version = 1)
 abstract class TaskDatabase : RoomDatabase() {
@@ -13,7 +14,7 @@ abstract class TaskDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: TaskDatabase? = null
 
-        fun getDatabase(context: android.content.Context): TaskDatabase {
+        fun getDatabase(context: Context): TaskDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
