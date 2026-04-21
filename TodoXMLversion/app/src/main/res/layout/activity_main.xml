@@ -41,12 +41,25 @@
 
 
         >
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
              />
+        <TextView
+            android:id="@+id/tvEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No tasks yet 👀"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:visibility="visible"
+            android:layout_marginTop="24dp"/>
+
+
     </LinearLayout>
+
 
 
 
