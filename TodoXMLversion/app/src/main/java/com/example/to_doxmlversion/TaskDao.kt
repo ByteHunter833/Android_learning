@@ -9,7 +9,7 @@ import androidx.room.Update
 @Dao
 interface TaskDao {
     @Insert
-    fun inserTask(task : TaskEntity)
+    fun insertTask(task : TaskEntity)
     @Delete
     fun deleteTask(task : TaskEntity)
     @Update

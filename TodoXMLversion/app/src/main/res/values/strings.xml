@@ -4,4 +4,14 @@
     <string name="update_task">Update task</string>
     <string name="update_the_task">Update the task</string>
     <string name="add_task">Add Task</string>
+    <string-array name="priority_array">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+    <string name="delete_task">Delete task</string>
+    <string name="edit_task">Edit task</string>
+    <string name="no_tasks_yet">No tasks yet 👀</string>
+    <string name="tasks">Tasks</string>
+
 </resources>

@@ -1,7 +1,9 @@
 package com.example.to_doxmlversion
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -30,7 +32,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db = TaskDatabase.getDatabase(this)
-
+        val priorityAdapter  = ArrayAdapter.createFromResource(
+            this,
+            R.array.priority_array,
+            android.R.layout.simple_spinner_item
+        )
+        priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerPriority.adapter = priorityAdapter
         setupRecyclerView()
         setupInsets()
         setupListeners()
@@ -72,11 +80,13 @@ class MainActivity : AppCompatActivity() {
     private fun setupListeners() {
         binding.button.setOnClickListener {
             val taskText = binding.textfield.text.toString().trim()
-
+            val selectedPriority = binding.spinnerPriority.selectedItem.toString()
+            Log.d("Debug", "Selected Priority: $selectedPriority")
             if (taskText.isEmpty()) {
                 Toast.makeText(this, "Please enter a task", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+
             }
+
 
             if (editingPosition != -1) {
                 tasks[editingPosition].title = taskText
@@ -85,7 +95,7 @@ class MainActivity : AppCompatActivity() {
                 editingPosition = -1
                 binding.button.text = getString(R.string.add_task)
             } else {
-                db.taskDao().inserTask(TaskEntity(title = taskText))
+                db.taskDao().insertTask(TaskEntity(title = taskText, taskPriority = selectedPriority))
                 loadData()
             }
 

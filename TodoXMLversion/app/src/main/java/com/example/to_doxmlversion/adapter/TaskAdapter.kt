@@ -5,6 +5,7 @@ import android.graphics.Paint
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.to_doxmlversion.R
 import com.example.to_doxmlversion.TaskDatabase
 import com.example.to_doxmlversion.TaskEntity
 import com.example.to_doxmlversion.databinding.TaskItemBinding
@@ -33,7 +34,12 @@ class TaskAdapter(
         val task = tasks[position]
 
         holder.binding.tvTask.text = task.title
-
+        holder.binding.tvPriority.text = task.taskPriority
+        when(task.taskPriority){
+            "High" -> holder.binding.tvPriority.setBackgroundResource(R.drawable.bg_priority_high)
+            "Medium" -> holder.binding.tvPriority.setBackgroundResource(R.drawable.bg_priority_medium)
+            "Low" -> holder.binding.tvPriority.setBackgroundResource(R.drawable.bg_priority_low)
+        }
         holder.binding.checkBox.setOnCheckedChangeListener(null)
         holder.binding.checkBox.isChecked = task.isDone
 

@@ -1,5 +1,4 @@
 package com.example.to_doxmlversion
-
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -8,5 +7,6 @@ data class TaskEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     var title: String,
-    var isDone: Boolean = false
+    var isDone: Boolean = false,
+    var taskPriority: String
 )
